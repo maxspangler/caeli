@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlestowne Hotels SMS System</title>
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/normalize.css/normalize.css"
+    />
+    <!-- https://milligram.io/ -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/milligram/dist/milligram.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Charlestowne Hotels</h1>
+    </header>
+    <div role="main">
+      <section>
+        <h3>Add Recipients</h3>
+        <p>
+          Enter one or more phone numbers to send your messages to. Press Enter
+          or click on Add after each number. Or use the Distribution Group selector below. All numbers have to be in the
+          <a
+            href="https://www.twilio.com/docs/glossary/what-e164"
+            target="_blank"
+            >E.164 format</a
+          >.
+        </p>
+        <form id="recipientForm">
+          <fieldset>
+            <label for="newRecipientInput">New Recipient Phone Number:</label>
+            <input type="tel" id="newRecipientInput"  />
+            <label for="distroGroupSelector">Distribution Groups</label>
+              <select id="distroGroupSelector">
+                <option hidden disabled selected value></option>
+                <option value="Corporate">Corporate</option>
+                <option value="General Managers">General Managers</option>
+                <option value="Corporate + General Managers">Corporate + General Managers</option>
+              </select>
+            <input class="button-primary"
+                   type="submit"
+                   value="Add" />
+          </fieldset>
+        </form>
+        <p><strong>Current list of recipients:</strong></p>
+        <ul id="recipients"></ul>
+      </section>
+      <section>
+        <h3>Send your message</h3>
+        <form id="sendNotificationForm">
+          <fieldset>
+            <label for="passcodeInput" required>Application Passcode</label>
+            <input name="passcode" id="passcodeInput" type="password" />
+            <label for="messageInput">Write your message:</label>
+            <textarea name="message" id="messageInput" required></textarea>
+            <input class="button-primary" type="submit" value="Send" />
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <h3>Result</h3>
+        <p id="resultSection"></p>
+      </section>
+    </div>
+    <footer>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
