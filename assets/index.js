@@ -54,7 +54,7 @@ function sendMessages(form) {
   };
   clearForm(form);
 
-  fetch('.netlify/functions/send-messages', {
+  fetch('https://www.maxspangler.com/.netlify/functions/send-messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
