@@ -52,7 +52,6 @@ function sendMessages(form) {
     message: form.message.value,
     recipients: recipients.join(','),
   };
-  console.log(data)
   clearForm(form);
 
   fetch('.netlify/functions/send-messages', {
