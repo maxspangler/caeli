@@ -55,7 +55,7 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch('send-messages', {
+  fetch('.netlify/functions/send-messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
