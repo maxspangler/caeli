@@ -47,11 +47,13 @@ recipientForm.addEventListener('submit', (evt) => {
 });
 
 function sendMessages(form) {
+  
   const data = {
     passcode: form.passcode.value,
     message: form.message.value,
     recipients: recipients.join(','),
   };
+  console.log(data)
   clearForm(form);
 
   fetch('https://www.maxspangler.com/.netlify/functions/send-messages', {
