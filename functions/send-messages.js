@@ -1,5 +1,6 @@
 exports.handler = function (context, event, callback) {
-  console.log('receipients?' + event.recipients)
+  console.log('event: ' + event)
+  console.log('context: ' + context)
   const phoneNumbers = event.recipients.split(',').map((x) => x.trim());
   const message = event.message;
   const passcode = event.passcode;
